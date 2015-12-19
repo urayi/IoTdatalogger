@@ -36,6 +36,7 @@ Para la implementación se utilizaron las librerías:
     Wire - Librería para manejar el protócolo de comunicación I2C.
   
   *RTCLib: programar y leer la hora del RTC DS1307. El Ejemplo de nombre "ds1307" muestra como ajustar y leer la fecha y hora.
+  https://github.com/adafruit/RTClib
   
   *Arduino core for ESP8266 WiFi chip: Esta librería permite programar el Chip ESP8266 utilizando el IDE Arduino con todas sus características de sintaxis, incluyendo varias librerias de arduino.
   https://github.com/esp8266/Arduino
