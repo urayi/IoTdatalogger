@@ -1,4 +1,6 @@
-/*
+/*  Autor: José Polanco
+    https://github.com/urayi
+    
  * Este sketch envia datos vía HTTP GET requests a www.ThingSpeak.com
  * Se necesita crear un User ID, luego un Channel y obtener una API Key en www.ThingSpeak.com.
 */
