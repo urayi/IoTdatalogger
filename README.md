@@ -43,7 +43,7 @@ Para la implementación se utilizaron las librerías:
   
   *ESP8266WiFi: incluida en el paquete anterior. El ejemplo de nombre "WifiClient" sirve de base para programar el microcontrolador ESP8266.
   
-  El resultado de la implementación estará disponible temporalmente en el canal: https://thingspeak.com/channels/51166
+  El resultado de la implementación estaba disponible temporalmente en el canal: https://thingspeak.com/channels/51166
   
   
   
