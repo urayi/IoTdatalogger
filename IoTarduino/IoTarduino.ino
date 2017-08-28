@@ -2,7 +2,7 @@
 https://github.com/urayi
 El Circuito:
  * Conexión del Lector de Memoria SD al BUS SPI:
- **UNO y NANO:  
+ **UNO y NANO:
     * MOSI  -> pin 11
     * MISO  -> pin 12
     * CLK   -> pin 13
@@ -10,7 +10,7 @@ El Circuito:
  * Conexión del Lector de Memoria SD al BUS I2C:
     * SDA   -> pin 04
     * SCL   -> pin 05
- * Conexión de ESP8266 - Se debe alimentar a 3.3V
+ * Conexión de ESP8266 - Se debe alimentar a 3.3V con una fuente externa al arduino
     * TXesp    ->D0: RXarduino
     * RXesp    ->D1: TXarduino Se debe emplear un convertidor de niveles lógicos
     * CHP      ->3.3V
@@ -32,7 +32,7 @@ RTC_DS1307 rtc;
 //HTTP Metodo GET, se puede emplear el metodo POST.
 //Variables de url con los datos que se transmitirán a ThingSpeak
 //apikey debe cambiarse por la correspondeinte a su canal en ThingSpeak
-String apikey="GQC4K1JYYEK2PTYZ";
+String apikey="XXXXXXXXXXXXXXXX";
 String GET = "GET /update?api_key="+apikey;
 String field="&field";
 String url="";
@@ -46,11 +46,11 @@ void setup()
   delay(1000);
   if (!rtc.isrunning()) {
     //la siguiente linea sirve para programar la hora del reloj con la del PC
-    //Se debe quitar las barras "//" en caso que el reloj no esté ajustado. 
+    //Se debe quitar las barras "//" en caso que el reloj no esté ajustado.
     //rtc.adjust(DateTime(__DATE__, __TIME__));
   }
   //Fin Configuración de RTC
-  
+
   //Inicio Configuración de SD
   pinMode(CS, OUTPUT);
   // Verifica que la tarjeta SD está presente
@@ -83,7 +83,7 @@ void loop()
   dataString += String(now.minute(),DEC)+String(":");
   if(now.second()<10){dataString += String("0");}
   dataString += String(now.second(),DEC)+String("\t");
-    
+
   // Lee los cuatro sensores y lo agrega al archivo
   url=GET;
   for (int analogPin = 0; analogPin < 4; analogPin++) {
@@ -105,7 +105,7 @@ void loop()
     }
     dataString += String(sensor);
     if (analogPin < 3) {
-      dataString += String("\t"); 
+      dataString += String("\t");
     }
   }
   // Carga el dato al archivo
